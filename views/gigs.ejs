@@ -1,0 +1,15 @@
+<%- include('./layout/header.ejs') -%>
+    <h2>All Gigs</h2>
+    <ul class="list-group">
+        <% gigs.forEach((gig) => { %> 
+            <li class="list-group-item">
+                <h4><%= gig.title %></h4>
+                <p><%= gig.description %></p>
+                <b>Budget: </b><%= gig.budget %>&nbsp;&nbsp;<a href="mailto:<%= gig.email %>"class="btn btn-danger">Apply Now</a> 
+                <br><br>
+                <b>Technologies Needed: </b> <span style="color: blue"><%= gig.technologies %></span>
+            </li>
+            <br>
+        <% }); %> 
+    </ul>
+<%- include('./layout/footer.ejs') -%>

@@ -1,0 +1,36 @@
+{
+  "name": "codegigs",
+  "version": "1.0.0",
+  "description": "## UI Templates",
+  "main": "index.js",
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "connect-flash": "^0.1.1",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.0.2",
+    "express": "^4.17.1",
+    "express-messages": "^1.0.1",
+    "express-session": "^1.17.0",
+    "express-validator": "^6.4.0",
+    "mongoose": "^5.9.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alatos2/codegigs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alatos2/codegigs/issues"
+  },
+  "homepage": "https://github.com/alatos2/codegigs#readme"
+}
