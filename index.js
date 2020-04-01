@@ -3,6 +3,7 @@ const path = require('path');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const chalk = require('chalk');
+const cookieParser = require('cookie-parser');
 const route = require('./routes/gigs');
 
 const server = express();
@@ -15,6 +16,8 @@ mongoose.connect(process.env.DATABASE_DEV_URL,{ useUnifiedTopology: true, useNew
 
 
 server.use(express.static(path.join(__dirname, 'public')));
+
+server.use(cookieParser());
 
 server.set('view engine', 'ejs');
 server.set('views', path.join(__dirname, 'views'));
