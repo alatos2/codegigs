@@ -1,0 +1,8 @@
+      <%- //messages('message', locals) %>
+      <% //if (errors) { %>
+        <% //errors.forEach((error) => {%>
+          <!-- <div class="alert alert-danger"><%= //error.msg %></div> -->
+        <%}//);%>
+      <%// } %>
+
+      https://medium.com/@kongruksiamza/nodejs-validate-data-and-alert-message-in-ejs-template-engine-f2844a4cb255

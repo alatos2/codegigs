@@ -40,12 +40,11 @@ const auth = {
             }
             bcrypt.compare(req.body.password, user.password)
             .then(valid => {
-                if(!valid) {
-                    return console.log('Incorrect Password');
-                }
+                if(!valid) return console.log('Incorrect Password');
                 const token = jwt.sign({userId: user._id}, process.env.SECRET, { expiresIn: '1h'});
-                // res.cookie('token', token).send();
-                return res.redirect('/add');
+                res.cookie('token', token, {maxAge: 360000});
+                req.flash('success', 'Login Successful');
+                res.redirect('/add');
             })
             .catch(e => console.error(e))
         })

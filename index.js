@@ -4,6 +4,7 @@ const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const chalk = require('chalk');
 const cookieParser = require('cookie-parser');
+const session = require('express-session');
 const route = require('./routes/gigs');
 
 const server = express();
@@ -18,6 +19,20 @@ mongoose.connect(process.env.DATABASE_DEV_URL,{ useUnifiedTopology: true, useNew
 server.use(express.static(path.join(__dirname, 'public')));
 
 server.use(cookieParser());
+
+// Express session middleware
+server.use(session({
+    secret: 'keyboard cat',
+    resave: true,
+    saveUninitialized: true
+}));
+
+// Express messages middleware
+server.use(require('connect-flash')());
+server.use(function (req, res, next) {
+  res.locals.messages = require('express-messages')(req, res);
+  next();
+});
 
 server.set('view engine', 'ejs');
 server.set('views', path.join(__dirname, 'views'));

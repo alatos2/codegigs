@@ -44,3 +44,9 @@
     </div>
   </nav>
   <div class="container">
+      <%- messages('message', locals) %>
+      <% if (locals.errors) { %>
+        <% errors.forEach((error) => {%>
+          <div class="alert alert-danger"><%= error.msg %></div>
+        <%});%>
+      <% } %>
